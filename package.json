@@ -2,15 +2,15 @@
   "name": "asistencia-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "start": "node server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.10",
+    "@supabase/supabase-js": "^2.50.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "sqlite3": "^5.1.7"
