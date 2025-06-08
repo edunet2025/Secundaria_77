@@ -19,10 +19,6 @@ app.use(express.json());
 app.post("/api/login", async (req, res) => {
   const { usuario, contrasena } = req.body;
 
-  if (!usuario || !contrasena) {
-    return res.status(400).json({ error: "Faltan campos" });
-  }
-
   const { data, error } = await supabase
     .from("usuarios")
     .select("*")
@@ -43,6 +39,7 @@ app.post("/api/login", async (req, res) => {
     nombre: usuarioLogeado.nombre
   });
 });
+
 app.get("/", (req, res) => {
   res.send("✅ Backend de Secundaria 77 funcionando correctamente");
 });
