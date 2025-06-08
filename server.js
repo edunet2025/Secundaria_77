@@ -34,7 +34,14 @@ app.post("/api/login", async (req, res) => {
   if (!data || data.length === 0) {
     return res.status(401).json({ error: "Credenciales inválidas" });
   }
-
+  // ✅ Si pasa validación
+  const usuarioLogeado = data[0];
+  res.json({
+    mensaje: "Inicio de sesión exitoso",
+    tipo: usuarioLogeado.tipo,     // admin, docente, alumno
+    nombre: usuarioLogeado.nombre  // puedes personalizar más datos si quieres
+  });
+});
   const usuarioEncontrado = data[0];
 
   res.json({
@@ -42,8 +49,6 @@ app.post("/api/login", async (req, res) => {
     tipo: usuarioEncontrado.tipo,
     nombre: usuarioEncontrado.nombre
   });
-});
-
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
