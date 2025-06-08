@@ -9,7 +9,7 @@ db.serialize(() => {
       nombre TEXT NOT NULL,
       usuario TEXT UNIQUE NOT NULL,
       contrasena TEXT NOT NULL,
-      tipo TEXT NOT NULL CHECK(tipo IN ('admin', 'docente', 'alumno'))
+      tipo TEXT NOT NULL CHECK(tipo IN ('Admón', 'docente', 'alumno'))
     )
   `);
 });
