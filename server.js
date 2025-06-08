@@ -23,6 +23,7 @@ app.post("/api/login", async (req, res) => {
   if (!data || data.length === 0) {
     return res.status(401).json({ error: "Credenciales inválidas" });
   }
+
   // ✅ Si pasa validación
   const usuarioLogeado = data[0];
   res.json({
