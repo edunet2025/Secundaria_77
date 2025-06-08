@@ -1,6 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./database");
+const { createClient } = require("@supabase/supabase-js");
+
+const supabase = createClient(
+  "https://mhnzjhelbupyifdlpngv.supabase.co", // ✅ Usa tu propia URL
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1obnpqaGVsYnVweWlmZGxwbmd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkyMTg1MjUsImV4cCI6MjA2NDc5NDUyNX0.tZAtvUL6kAFfEhwrXgopbQLcnq9qCCm5zpPBkm6z8wY" // 🔒 Sustituye por tu clave pública anon
+);
 
 const app = express();
 const PORT = 3000;
