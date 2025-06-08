@@ -43,6 +43,9 @@ app.post("/api/login", async (req, res) => {
     nombre: usuarioLogeado.nombre
   });
 });
+app.get("/", (req, res) => {
+  res.send("✅ Backend de Secundaria 77 funcionando correctamente");
+});
 
 // 🚀 Iniciar servidor
 app.listen(PORT, () => {
